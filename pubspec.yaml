@@ -14,6 +14,7 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   get: 
+  flutter_svg: ^1.0.3
 
 dev_dependencies:
   flutter_test:
@@ -27,10 +28,10 @@ flutter:
   fonts:
     - family: Inder
       fonts:
-        - asset: fonts/Inder/Inder-Regular.ttf
+        - asset: assets/fonts/Inder/Inder-Regular.ttf
     - family: IndieFlower
       fonts:
-        - asset: fonts/indie_flower/IndieFlower-Regular.ttf
+        - asset: assets/fonts/indie_flower/IndieFlower-Regular.ttf
   uses-material-design: true
 
 
