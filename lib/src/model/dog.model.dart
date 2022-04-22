@@ -8,7 +8,7 @@ class DogModel {
   String? photo;
   List<String> temperament = [];
 
-  void fromJson(Map<String, dynamic> json) {
+  DogModel.fromJson(Map<String, dynamic> json) {
     breed = json["breed"];
     breedType = json["breedType"];
     origin = json["origin"];
