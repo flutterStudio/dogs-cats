@@ -34,7 +34,7 @@ class AppColors {
   static const CustomColorScheme lightColorScheme = CustomColorScheme(
     primary: green,
     brightness: Brightness.light,
-    primaryVariant: lighGreen,
+    primaryVariant: darkGreen,
     secondaryVariant: orange,
     secondary: lighGreen,
     background: lighGreen,
@@ -45,8 +45,8 @@ class AppColors {
     onSecondary: darkGreen,
     surface: white,
     onSurface: darkGreen,
-    icon: darkGreen,
-    activeIcon: orange,
+    icon: green,
+    activeIcon: darkGreen,
     inactiveIcon: white,
   );
 }
