@@ -1,4 +1,4 @@
-import '/src/view/home.screen.dart';
+import '../../view/home/home.screen.dart';
 
 import '../routing/app_paths.dart';
 
