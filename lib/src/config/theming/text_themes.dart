@@ -69,7 +69,7 @@ class TextStyles {
   static TextStyle getTextStyle(FontType type) => TextStyle(
       fontSize: SizeConfig.fontSize(type),
       fontWeight: fontWeight(type),
-      fontFamily: "IndieFlowe");
+      fontFamily: "IndieFlower");
 
   static const Map<FontType, FontWeight> _fontWeights = {
     FontType.h1: FontWeight.w300,
