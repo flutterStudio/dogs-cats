@@ -30,14 +30,17 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         body: Column(
           children: [
             Row(
-              children: const [
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
                 CustomTabWidget(
                   isActive: true,
                   isDog: true,
+                  onClick: () {},
                 ),
                 CustomTabWidget(
                   isActive: false,
                   isDog: false,
+                  onClick: () {},
                 ),
               ],
             )
