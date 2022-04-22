@@ -22,8 +22,15 @@ dev_dependencies:
   flutter_lints: ^1.0.0
 flutter:
   assets:
-    - assets/images/  
-
+    - assets/images/ 
+    - assets/icons/ 
+  fonts:
+    - family: Inder
+      fonts:
+        - asset: fonts/Inder/Inder-Regular.ttf
+    - family: IndieFlower
+      fonts:
+        - asset: fonts/indie_flower/IndieFlower-Regular.ttf
   uses-material-design: true
 
 
