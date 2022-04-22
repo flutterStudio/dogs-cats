@@ -67,7 +67,9 @@ class TextStyles {
   static TextStyle get overline => getTextStyle(FontType.overline);
 
   static TextStyle getTextStyle(FontType type) => TextStyle(
-      fontSize: SizeConfig.fontSize(type), fontWeight: fontWeight(type));
+      fontSize: SizeConfig.fontSize(type),
+      fontWeight: fontWeight(type),
+      fontFamily: "IndieFlowe");
 
   static const Map<FontType, FontWeight> _fontWeights = {
     FontType.h1: FontWeight.w300,

@@ -6,6 +6,11 @@ class AppColors {
   static const Color darkGrey = Color(0xFF212121);
   static const Color orange = Color(0xFFDD2C00);
   static const Color white = Color(0xFFFFFFFF);
+  static const Color green = Color(0xFFACE7E7);
+  static const Color lighGreen = Color(0xFFCBF6F6);
+  static const Color darkGreen = Color(0xFF1D4949);
+  static const Color grey = Color(0xFFFFFFFF);
+  static const Color lightGrey = Color(0xFFFFFFFF);
 
   static const CustomColorScheme darkColorScheme = CustomColorScheme(
     primary: darkGrey,
@@ -27,20 +32,20 @@ class AppColors {
   );
 
   static const CustomColorScheme lightColorScheme = CustomColorScheme(
-    primary: white,
+    primary: green,
     brightness: Brightness.light,
-    primaryVariant: white,
+    primaryVariant: lighGreen,
     secondaryVariant: orange,
-    secondary: orange,
-    background: white,
+    secondary: lighGreen,
+    background: lighGreen,
     error: orange,
-    onBackground: darkGrey,
+    onBackground: darkGreen,
     onError: orange,
-    onPrimary: darkGrey,
-    onSecondary: darkGrey,
+    onPrimary: darkGreen,
+    onSecondary: darkGreen,
     surface: white,
-    onSurface: darkGrey,
-    icon: darkGrey,
+    onSurface: darkGreen,
+    icon: darkGreen,
     activeIcon: orange,
     inactiveIcon: white,
   );
