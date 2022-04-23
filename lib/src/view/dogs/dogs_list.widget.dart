@@ -13,8 +13,11 @@ class DogList extends GetView<HomeScreenController> {
   Widget build(BuildContext context) {
     return Obx(() => DataHandler<List<DogModel>>(
         onSuccess: (context, data) => ListView.builder(
-            itemCount: data.length,
-            itemBuilder: (context, index) => DogListItem(dog: data[index])),
+              itemCount: data.length,
+              itemBuilder: (context, index) => DogListItem(dog: data[index]),
+              itemExtent: 120,
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+            ),
         data: controller.dogs));
   }
 }
