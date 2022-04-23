@@ -24,7 +24,8 @@ class HomeScreenController extends GetxController {
   int get activeTab => _activeTab.value;
 
   void changeTab(int value) {
-    _pageController.jumpToPage(value);
+    _pageController.animateToPage(value,
+        duration: const Duration(milliseconds: 200), curve: Curves.linear);
     _activeTab.value = value;
   }
 
