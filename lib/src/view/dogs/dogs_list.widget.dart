@@ -19,6 +19,9 @@ class DogList extends GetView<HomeScreenController> {
               itemExtent: 120,
               padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
             ),
+        onErrorRetry: () {
+          controller.getDogs();
+        },
         data: controller.dogs));
   }
 }

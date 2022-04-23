@@ -13,7 +13,7 @@ class CatsGrid extends GetView<HomeScreenController> {
   Widget build(BuildContext context) {
     return Obx(() => DataHandler<List<CatModel>>(
         onErrorRetry: () {
-          controller.getDogs();
+          controller.getCats();
         },
         onSuccess: (context, data) => MasonryGridView.builder(
               itemCount: data.length,

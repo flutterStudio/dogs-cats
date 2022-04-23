@@ -60,8 +60,8 @@ class HomeScreenController extends GetxController {
   Future<void> getCats() async {
     int catsCount = 0;
     List<CatModel> catsData = [];
-    _dogs.value = Data.inProgress();
-    while (catsCount < 10 * _cats.value.page) {
+    _cats.value = Data.inProgress();
+    while (catsCount < 10) {
       Data<CatModel> cat = await getCat();
       if (cat.isSucceed) {
         catsData.add(cat.data!);

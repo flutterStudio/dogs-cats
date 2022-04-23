@@ -52,7 +52,10 @@ class DataHandler<T> extends StatelessWidget {
     switch (_data.status) {
       case DataStatus.inProgress:
         {
-          return _inProgress ?? const CircularProgressIndicator();
+          return _inProgress ??
+              CircularProgressIndicator(
+                color: Theme.of(context).colorScheme.primaryVariant,
+              );
         }
       case DataStatus.faild:
         {
