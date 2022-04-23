@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter_template/src/model/cat.model.dart';
 import 'package:flutter_template/src/model/data.model.dart';
 import 'package:flutter_template/src/model/dog.model.dart';
 import 'package:flutter_template/src/utils/network.util.dart';
@@ -45,5 +46,46 @@ class HomeScreenController extends GetxController {
               return Data.faild(message: message!);
             });
     _dogs.value = data;
+  }
+
+  // Cats
+  final Rx<Data<List<CatModel>>> _cats = Rx(Data.none());
+  Data<List<CatModel>> get cats => _cats.value;
+
+  Future<void> getCats() async {
+    int catsCount = 0;
+    List<CatModel> catsData = [];
+    _dogs.value = Data.inProgress();
+    while (catsCount < 10 * _cats.value.page) {
+      Data<CatModel> cat = await getCat();
+      if (cat.isSucceed) {
+        catsData.add(cat.data!);
+        catsCount++;
+      } else {
+        return;
+      }
+    }
+    _cats.value.page++;
+    _cats.value.data?.addAll(catsData);
+  }
+
+  Future<Data<CatModel>> getCat() async {
+    const String url = "https://cataas.com/cat?json=true";
+    Data<CatModel> data = await NetworkUtils.handleRequest<Data<CatModel>>(
+        request: () => GetConnect().get(url),
+        handler: (response) async {
+          CatModel? cat;
+          var catData = jsonDecode(response.body);
+
+          cat = CatModel.fromJson(catData);
+          if (cat.id != null) {
+            cat.image = "https://cataas.com/cat/${cat.id}";
+          }
+          return Data.succeed(data: cat);
+        },
+        onError: (error, message) async {
+          return Data.faild(message: message!);
+        });
+    return data;
   }
 }
