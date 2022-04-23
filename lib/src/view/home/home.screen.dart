@@ -26,12 +26,16 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               CustomTabWidget(
                 isActive: true,
                 isDog: true,
-                onClick: () {},
+                onClick: () {
+                  Get.find<HomeScreenController>().changeTab(0);
+                },
               ),
               CustomTabWidget(
                 isActive: false,
                 isDog: false,
-                onClick: () {},
+                onClick: () {
+                  Get.find<HomeScreenController>().changeTab(1);
+                },
               ),
             ],
           ),
