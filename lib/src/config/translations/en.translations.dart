@@ -11,10 +11,11 @@ Map<String, String> _english = {
 Map<String, String> _errors = {
   "error-unknown": "Unknown error",
   "error-timeout": "Timeout error",
+  "error-empty": "No data found",
 };
 
 Map<String, String> _text = {
-  "tryAgain": "Try again",
+  "try-again": "Try again",
   "dog": "Dog",
   "dogs": "Dogs",
   "cat": "Cat",
