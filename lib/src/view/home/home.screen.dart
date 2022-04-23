@@ -48,7 +48,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               child: Container(
             child: GetBuilder<HomeScreenController>(
               builder: (controller) => PageView(
-                onPageChanged: (index) {},
+                onPageChanged: (index) {
+                  controller.changeTab(index);
+                },
                 controller: controller.pageController,
                 children: const [DogList(), CatsGrid()],
               ),
