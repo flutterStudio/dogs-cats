@@ -98,16 +98,23 @@ class DataHandler<T> extends StatelessWidget {
               Text(
                 message,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white),
+                style: Theme.of(context).textTheme.bodyText1,
               ),
               const SizedBox(height: 15),
               onErrorRetry == null
                   ? Container()
                   : TextButton(
-                      onPressed: onErrorRetry, child: Text("try-again".tr))
+                      style: TextButton.styleFrom(
+                        primary: Theme.of(context).colorScheme.primaryVariant,
+                        backgroundColor: Theme.of(context)
+                            .colorScheme
+                            .primary, // Background Color
+                      ),
+                      onPressed: onErrorRetry,
+                      child: Text(
+                        "try-again".tr,
+                        style: Theme.of(context).textTheme.button,
+                      ))
             ],
           ),
         ),
