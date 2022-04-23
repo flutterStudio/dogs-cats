@@ -20,19 +20,22 @@ class CustomTabWidget extends StatelessWidget {
         children: [
           SvgPicture.asset(
             "assets/icons/${isDog ? 'dog' : 'cat'}${isActive ? '-active' : ''}.svg",
-            width: 70,
+            width: 50,
             color: isActive
                 ? Theme.of(context).colorScheme.primaryVariant
-                : Theme.of(context).colorScheme.primary,
+                : Theme.of(context).colorScheme.primaryVariant.withOpacity(0.5),
           ),
           const SizedBox(height: 15),
           Text(
             isDog ? "Dogs" : "Cats",
-            style: Theme.of(context).textTheme.headline5!.copyWith(
+            style: Theme.of(context).textTheme.headline6!.copyWith(
                   fontFamily: 'Inder',
                   color: isActive
                       ? Theme.of(context).colorScheme.primaryVariant
-                      : Theme.of(context).colorScheme.primary,
+                      : Theme.of(context)
+                          .colorScheme
+                          .primaryVariant
+                          .withOpacity(0.5),
                 ),
           )
         ],
