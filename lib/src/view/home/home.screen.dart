@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_template/src/config/theming/theming.dart';
+import 'package:flutter_template/src/view/dogs/dogs_list.widget.dart';
 import 'package:flutter_template/src/view/shared/custom_tab.widget.dart';
 import 'package:get/get.dart';
 import 'package:get/get_utils/get_utils.dart';
@@ -43,7 +44,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   onClick: () {},
                 ),
               ],
-            )
+            ),
+            Expanded(
+                child: Container(
+              child: const DogList(),
+              decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.secondary,
+                  borderRadius: const BorderRadius.horizontal(
+                      left: Radius.circular(15), right: Radius.circular(15))),
+            ))
           ],
         ));
   }
