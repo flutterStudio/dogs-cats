@@ -20,24 +20,26 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         body: SafeArea(
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              CustomTabWidget(
-                isActive: true,
-                isDog: true,
-                onClick: () {
-                  Get.find<HomeScreenController>().changeTab(0);
-                },
-              ),
-              CustomTabWidget(
-                isActive: false,
-                isDog: false,
-                onClick: () {
-                  Get.find<HomeScreenController>().changeTab(1);
-                },
-              ),
-            ],
+          GetX<HomeScreenController>(
+            builder: (controller) => Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                CustomTabWidget(
+                  isActive: controller.activeTab == 0,
+                  isDog: true,
+                  onClick: () {
+                    Get.find<HomeScreenController>().changeTab(0);
+                  },
+                ),
+                CustomTabWidget(
+                  isActive: controller.activeTab == 1,
+                  isDog: false,
+                  onClick: () {
+                    Get.find<HomeScreenController>().changeTab(1);
+                  },
+                ),
+              ],
+            ),
           ),
           const SizedBox(
             height: 20,

@@ -25,6 +25,7 @@ class HomeScreenController extends GetxController {
 
   void changeTab(int value) {
     _pageController.jumpToPage(value);
+    _activeTab.value = value;
   }
 
   // Dogs
