@@ -16,7 +16,6 @@ class Application extends StatefulWidget {
 class _ApplicationState extends State<Application> {
   @override
   void initState() {
-    AppConfig().init();
     super.initState();
   }
 

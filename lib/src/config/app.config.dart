@@ -11,6 +11,7 @@ class AppConfig {
   }
 
   Future<void> _initControllers() async {
-    Get.put<HomeScreenController>(HomeScreenController());
+    await Get.putAsync<HomeScreenController>(
+        () async => HomeScreenController());
   }
 }
