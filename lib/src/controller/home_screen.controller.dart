@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_template/src/model/cat.model.dart';
 import 'package:flutter_template/src/model/data.model.dart';
 import 'package:flutter_template/src/model/dog.model.dart';
@@ -7,19 +8,23 @@ import 'package:flutter_template/src/utils/network.util.dart';
 import 'package:get/get_connect/connect.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/state_manager.dart';
+import 'package:get/get.dart';
 
 class HomeScreenController extends GetxController {
   @override
   void onInit() {
     getDogs();
+    getCats();
     super.onInit();
   }
 
+  final PageController _pageController = PageController(initialPage: 0);
+  PageController get pageController => _pageController;
   final Rx<int> _activeTab = 0.obs;
   int get activeTab => _activeTab.value;
 
   void changeTab(int value) {
-    _activeTab.value = value;
+    _pageController.jumpToPage(value);
   }
 
   // Dogs
@@ -62,6 +67,7 @@ class HomeScreenController extends GetxController {
         catsData.add(cat.data!);
         catsCount++;
       } else {
+        _cats.value = Data.faild(message: "error-unknown".tr);
         return;
       }
     }
