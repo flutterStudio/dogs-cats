@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:flutter_template/src/config/app.config.dart';
 import 'package:get/get_connect/http/src/response/response.dart';
 import 'package:get/get.dart';
 
