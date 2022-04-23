@@ -47,7 +47,7 @@ class DogListItem extends StatelessWidget {
                             style: Theme.of(context)
                                 .textTheme
                                 .headline6!
-                                .copyWith(fontWeight: FontWeight.w600),
+                                .copyWith(fontWeight: FontWeight.w500),
                             maxLines: 1,
                             overflow: TextOverflow.clip,
                           ),
@@ -55,21 +55,21 @@ class DogListItem extends StatelessWidget {
                         Expanded(
                             child: Text(
                           "${dog.breedType}",
-                          style: Theme.of(context).textTheme.bodyText1,
+                          style: Theme.of(context).textTheme.bodyText2,
                         )),
                       ],
                     ),
                     Text(
                       "hypoallergenic -  ${dog.hypoallergenic}",
-                      style: Theme.of(context).textTheme.bodyText1,
+                      style: Theme.of(context).textTheme.bodyText2,
                     ),
                     Text(
                       "intelligence -  ${dog.intelligence}",
-                      style: Theme.of(context).textTheme.bodyText1,
+                      style: Theme.of(context).textTheme.bodyText2,
                     ),
                     Text(
                       "popularity -  ${dog.popularity}",
-                      style: Theme.of(context).textTheme.bodyText1,
+                      style: Theme.of(context).textTheme.bodyText2,
                     ),
                   ],
                 ),
