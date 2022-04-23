@@ -4,7 +4,7 @@ class DogModel {
   String? origin;
   String? popularity;
   String? hypoallergenic;
-  String? intelligence;
+  int? intelligence;
   String? photo;
   List<String> temperament = [];
 
@@ -16,6 +16,6 @@ class DogModel {
     hypoallergenic = json["hypoallergenic"];
     intelligence = json["intelligence"];
     photo = json["photo"];
-    temperament = json["temperament"] as List<String>;
+    // temperament = json["temperament"] as List<String>;
   }
 }
