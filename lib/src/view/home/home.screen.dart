@@ -24,20 +24,53 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             builder: (controller) => Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                CustomTabWidget(
-                  isActive: controller.activeTab == 0,
-                  isDog: true,
-                  onClick: () {
-                    Get.find<HomeScreenController>().changeTab(0);
-                  },
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    IconButton(
+                        color: Theme.of(context).colorScheme.primaryVariant,
+                        onPressed: () {
+                          Get.updateLocale(Locale(
+                              Get.locale!.languageCode == "en" ? "ar" : "en"));
+                        },
+                        icon: const Icon(
+                          Icons.language_outlined,
+                          size: 20,
+                        )),
+                    Text(
+                      Get.locale!.languageCode == "en" ? "ar".tr : "en".tr,
+                      style: Theme.of(context).textTheme.caption!.copyWith(
+                          fontFamily: 'Inder',
+                          color: Theme.of(context).colorScheme.primaryVariant),
+                    )
+                  ],
                 ),
-                CustomTabWidget(
-                  isActive: controller.activeTab == 1,
-                  isDog: false,
-                  onClick: () {
-                    Get.find<HomeScreenController>().changeTab(1);
-                  },
+                const SizedBox(
+                  width: 20,
                 ),
+                Expanded(
+                  child: Row(
+                    children: [
+                      Expanded(
+                          child: CustomTabWidget(
+                        isActive: controller.activeTab == 0,
+                        isDog: true,
+                        onClick: () {
+                          Get.find<HomeScreenController>().changeTab(0);
+                        },
+                      )),
+                      Expanded(
+                          child: CustomTabWidget(
+                        isActive: controller.activeTab == 1,
+                        isDog: false,
+                        onClick: () {
+                          Get.find<HomeScreenController>().changeTab(1);
+                        },
+                      )),
+                    ],
+                  ),
+                )
               ],
             ),
           ),

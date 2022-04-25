@@ -14,7 +14,6 @@ class HomeScreenController extends GetxController {
   @override
   void onInit() {
     getDogs();
-    getCats();
     super.onInit();
   }
 
