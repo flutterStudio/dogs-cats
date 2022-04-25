@@ -4,17 +4,11 @@ Map<String, String> _english = {
   "appTitle": "Flutter Template",
   "en": "English",
   "ar": "Arabic",
-  ..._errors,
-  ..._text
-};
-
-Map<String, String> _errors = {
+  // errors
   "error-unknown": "Unknown error",
   "error-timeout": "Timeout error",
   "error-empty": "No data found",
-};
-
-Map<String, String> _text = {
+  //text
   "try-again": "Try again",
   "dog": "Dog",
   "dogs": "Dogs",
