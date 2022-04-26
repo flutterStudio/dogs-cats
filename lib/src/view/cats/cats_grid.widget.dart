@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_template/src/controller/home_screen.controller.dart';
-import 'package:flutter_template/src/model/cat.model.dart';
 import 'package:flutter_template/src/model/dog.model.dart';
 import 'package:flutter_template/src/view/shared/data_handler.widget.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
