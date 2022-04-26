@@ -22,9 +22,13 @@ class CatsGrid extends GetView<HomeScreenController> {
                   const SliverSimpleGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
               ),
-              itemBuilder: (context, index) => Container(
-                color: Colors.accents[index],
-              ),
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              itemBuilder: (context, index) => ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.network(
+                    data[index].photo!,
+                  )),
               padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
             ),
         data: controller.dogs));
